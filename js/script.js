@@ -18,3 +18,6 @@ var divide = function(number1, number2) {
 var number1 = parseFloat(prompt("Enter a number: "));
 
 var number2 = parseFloat(prompt("Enter another number: "));
+
+var result = add(number1, number2);
+alert(result);
