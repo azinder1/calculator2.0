@@ -31,17 +31,28 @@ var calculate = function(number1, number2, operation) {
 				break
 		}
 }
-
 //User interface logic:
 
 $(document).ready(function(){
-	$("form#calculator").submit(function(event) {
+
+	$("#add").click(function() {
 		var number1 = parseInt($("input#number1").val());
 		var number2 = parseInt($("input#number2").val());
-		var operation;
-		if
-
-		$("#output").text(result);
-		event.preventDefault();
+		$("#output").text(calculate(number1, number2, add));
+	});
+	$("#subtract").click(function() {
+		var number1 = parseInt($("input#number1").val());
+		var number2 = parseInt($("input#number2").val());
+		$("#output").text(calculate(number1, number2, subtract));
+	});
+	$("#multiply").click(function() {
+		var number1 = parseInt($("input#number1").val());
+		var number2 = parseInt($("input#number2").val());
+		$("#output").text(calculate(number1, number2, multiply));
+	});
+	$("#divide").click(function() {
+		var number1 = parseInt($("input#number1").val());
+		var number2 = parseInt($("input#number2").val());
+		$("#output").text(calculate(number1, number2, divide));
 	});
 });
