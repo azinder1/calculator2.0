@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <h1>Calculator</h1>
-      <div id="calculator">
+      <form id="calculator">
         <div class="form-group">
           <label for="number1">1st number:</label>
           <input id="number1" class="form-control" type="text">
@@ -18,15 +18,31 @@
         <div class="form-group">
           <label for="number2">2nd number:</label>
           <input id="number2" class="form-control" type="text">
+        <div class="radio">
+          <label>
+            <input value="add" name="operator" type="radio" checked>+
+          </label>
         </div>
-        <div id="add" class="btn">+</div>
-        <div id="subtract" class="btn">-</div>
-        <div id="multiply" class="btn">x</div>
-        <div id="divide" class="btn">&divide;</div>
-      </div>
+        <div class="radio">
+          <label>
+            <input value="subtract" name="operator" type="radio">-
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input value="multiply" name="operator" type="radio">x
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input value="divide" name="operator" type="radio" >&divide;
+          </label>
+        </div>
+      </form>
       <div id="output">
 
       </div>
+      <button type= "submit" type="button" name="button">Enter</button>
     </div>
   </body>
 </html>

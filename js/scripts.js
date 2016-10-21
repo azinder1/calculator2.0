@@ -33,26 +33,26 @@ var calculate = function(number1, number2, operation) {
 }
 //User interface logic:
 
-$(document).ready(function(){
 
-	$("#add").click(function() {
-		var number1 = parseInt($("input#number1").val());
-		var number2 = parseInt($("input#number2").val());
-		$("#output").text(calculate(number1, number2, add));
-	});
-	$("#subtract").click(function() {
-		var number1 = parseInt($("input#number1").val());
-		var number2 = parseInt($("input#number2").val());
-		$("#output").text(calculate(number1, number2, subtract));
-	});
-	$("#multiply").click(function() {
-		var number1 = parseInt($("input#number1").val());
-		var number2 = parseInt($("input#number2").val());
-		$("#output").text(calculate(number1, number2, multiply));
-	});
-	$("#divide").click(function() {
-		var number1 = parseInt($("input#number1").val());
-		var number2 = parseInt($("input#number2").val());
-		$("#output").text(calculate(number1, number2, divide));
+$(document).ready(function(){
+	$("form#calculator").submit(function(event){
+		var number1 = parseInt($("#number1").val());
+		var number2 = parseInt($("#number2").val());
+		var operator = $("input:radio[name=operator]:checked").val();
+		console.log("1st number:" + number1);  // for debugging
+	  console.log("2nd number:" + number2);  // for debugging
+	  console.log("operator:" + operator);  // for debugging
+		var result;
+		if (operator === "add"){
+			result = add(number1, number2);
+		} else if (operator === "subtract") {
+			result = subtract(number1, number2);
+		} else if (operator === "multiply") {
+			result = multiply(number1, number2);
+		} else if (operator === "divide") {
+			result =  divide(number1, number2);
+		}
+		event.preventDefault();
+		$("#output").text(result);
 	});
 });
